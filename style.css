@@ -24,6 +24,8 @@
   .header-left {
     display: flex;
     align-items: center;
+    width: 100%;
+
   }
   
   .logo {
@@ -54,7 +56,7 @@
   .wallet-btn {
     background: #2596be;
     color: white;
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 6px;
     font-weight: 600;
@@ -67,12 +69,22 @@
   font-size: 24px;
   cursor: pointer;
   color: #2596be;
+  justify-content: right;
 }
 
 /* Mobile Navigation */
 @media screen and (max-width: 768px) {
-  .menu-toggle {
+  #menu-toggle {
     display: block;
+    align-items: end;
+    align-self: self-end;
+    justify-content: right;
+
+  }
+
+  .header-left {
+    display: flex;
+    width: 100%;
   }
 
   .nav-links {
