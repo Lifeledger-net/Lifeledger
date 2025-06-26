@@ -79,6 +79,7 @@
     align-items: end;
     align-self: self-end;
     justify-content: right;
+    vertical-align: bottom;
 
   }
 
