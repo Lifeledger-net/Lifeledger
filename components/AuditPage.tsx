@@ -1,4 +1,3 @@
-// pages/audit/page.tsx or components/pages/AuditPage.tsx
 "use client";
 
 import { Copy } from "lucide-react";
@@ -42,12 +41,14 @@ const AuditPage = () => {
 				{/* Campaign Card */}
 				<div className='bg-white border border-gray-200 rounded-[16px] p-2 mb-2 max-w-[584px]'>
 					{/* Profile Section */}
-					<div className='flex items-center space-x-4 mb-6'>
-						<div className='w-16 h-16 bg-orange-400 rounded-lg overflow-hidden flex-shrink-0'>
-							{/* Replace with actual profile image if available */}
-							<div className='w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center'>
-								<span className='text-white font-bold text-xl'>K</span>
-							</div>
+					<div className='flex items-center space-x-4 mb-2 p-2'>
+						<div className='w-24 h-24  flex   overflow-hidden'>
+							<Image
+								src='/images/Passport.png'
+								alt='individual'
+								width={109.183}
+								height={107}
+							/>
 						</div>
 						<div>
 							<h2 className='text-xl font-bold text-gray-900'>Keith.Sol</h2>
