@@ -1,5 +1,6 @@
 // pages/upload/page.tsx
 "use client";
+import Image from "next/image";
 
 import { useState } from "react";
 import { Upload, FileText, Plus, Calendar } from "lucide-react";
@@ -64,11 +65,13 @@ export const UploadContent = () => {
 					>
 						{/* Upload Icon */}
 						<div className='mb-6'>
-							<div className='w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center'>
-								<div className='relative'>
-									<div className='w-10 h-8 bg-blue-500 rounded-t-md'></div>
-									<div className='w-12 h-10 bg-blue-400 rounded-md -mt-2'></div>
-								</div>
+							<div className='w-16 h-16 sm:w-20 sm:h-20 mx-auto  flex items-center justify-center'>
+								<Image
+									src='/images/Folder.png'
+									alt='Upload Icon'
+									width={99.39}
+									height={71}
+								/>
 							</div>
 						</div>
 
@@ -94,10 +97,18 @@ export const UploadContent = () => {
 							<button className='inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors'>
 								<span className='mr-2'>Import from</span>
 								<div className='flex items-center space-x-1'>
-									<div className='w-4 h-4 bg-blue-500 rounded-full'></div>
-									<div className='w-4 h-4 bg-green-500 rounded-full'></div>
-									<div className='w-4 h-4 bg-yellow-500 rounded-full'></div>
-									<div className='w-4 h-4 bg-red-500 rounded-full'></div>
+									<Image
+										src='/images/Google drive icon.png'
+										alt='Google drive Icon'
+										width={20}
+										height={20}
+									/>
+									<Image
+										src='/images/Folder.png'
+										alt='Upload Icon'
+										width={20}
+										height={20}
+									/>
 								</div>
 							</button>
 						</div>

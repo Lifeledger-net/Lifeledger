@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export const Header = ({ onMenuClick }: HeaderProps) => {
 	return (
-		<header className='bg-white shadow-sm px-4 sm:px-6 py-4 mb-4 rounded-t-[24px]'>
+		<header className='bg-white px-4 sm:px-6 py-4 mb-4 rounded-t-[24px]'>
 			<div className='flex items-center justify-between'>
 				<div className='flex items-center space-x-4'>
 					<button

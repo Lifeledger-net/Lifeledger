@@ -13,6 +13,7 @@ import {
 	Eye,
 } from "lucide-react";
 import { DashboardLayout } from "./layout/DashboardLayout";
+import Image from "next/image";
 
 const HealthSummaryPage = () => {
 	return (
@@ -42,8 +43,13 @@ const HealthSummaryPage = () => {
 					<div className='lg:col-span-1 mt-0 lg:mt-8 xl:mt-8'>
 						<div className='bg-[#2596BE] text-white rounded-xl p-6 sticky top-8 shadow-md'>
 							<div className='flex items-center space-x-3 mb-4'>
-								<div className='w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center'>
-									<FolderOpen className='w-4 h-4 text-white' />
+								<div className='w-8 h-8  flex items-center justify-center'>
+									<Image
+										src='/images/folder_1.png'
+										alt='Shared Access'
+										width={32}
+										height={32}
+									/>{" "}
 								</div>
 								<div>
 									<p className='text-sm text-blue-100'>Record type</p>
@@ -92,8 +98,13 @@ const HealthSummaryPage = () => {
 								{/* Low Iron Level */}
 								<div className='bg-[#EFFAFC] rounded-[8px] p-4'>
 									<div className='flex items-center space-x-3 mb-2'>
-										<div className='w-6 h-6 bg-red-500 rounded-full flex items-center justify-center'>
-											<Droplets className='w-3 h-3 text-white' />
+										<div className='w-6 h-6 flex items-center justify-center'>
+											<Image
+												src='/images/red pill.png'
+												alt='pill'
+												width={32}
+												height={32}
+											/>
 										</div>
 										<h3 className='font-semibold text-[#262626]'>
 											Low Iron Level
@@ -108,8 +119,13 @@ const HealthSummaryPage = () => {
 								{/* Mild Dehydration */}
 								<div className='bg-[#EFFAFC]  rounded-[8px] p-4'>
 									<div className='flex items-center space-x-3 mb-2'>
-										<div className='w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center'>
-											<Droplets className='w-3 h-3 text-white' />
+										<div className='w-6 h-6 flex items-center justify-center'>
+											<Image
+												src='/images/Dehydration pill.png'
+												alt=' dehydration-pill'
+												width={32}
+												height={32}
+											/>
 										</div>
 										<h3 className='font-semibold text-[#262626]'>
 											Mild - dehydration
@@ -124,8 +140,13 @@ const HealthSummaryPage = () => {
 								{/* No Urgent Issues */}
 								<div className='bg-[#EFFAFC] rounded-[8px] p-4'>
 									<div className='flex items-center space-x-3 mb-2'>
-										<div className='w-6 h-6 bg-green-500 rounded-full flex items-center justify-center'>
-											<CheckCircle className='w-3 h-3 text-white' />
+										<div className='w-6 h-6flex items-center justify-center'>
+											<Image
+												src='/images/Dehydration pill (1).png'
+												alt=' dehydration-pill-1'
+												width={32}
+												height={32}
+											/>
 										</div>
 										<h3 className='font-semibold text-[#262626]'>
 											No urgent issues detected
@@ -147,8 +168,13 @@ const HealthSummaryPage = () => {
 							<div className='space-y-4'>
 								{/* Stay Hydrated */}
 								<div className='flex items-start space-x-4'>
-									<div className='w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0'>
-										<Droplets className='w-4 h-4 text-blue-600' />
+									<div className='w-6 h-6 flex items-center justify-center flex-shrink-0'>
+										<Image
+											src='/images/image 22.png'
+											alt='bottle-water'
+											width={24}
+											height={24}
+										/>
 									</div>
 									<div>
 										<h3 className='font-[500] text-[20px] text-[#262626] mb-1'>
@@ -163,8 +189,13 @@ const HealthSummaryPage = () => {
 
 								{/* Increase Iron Intake */}
 								<div className='flex items-start space-x-4'>
-									<div className='w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0'>
-										<div className='w-4 h-4 bg-green-600 rounded-full'></div>
+									<div className='w-6 h-6 flex items-center justify-center flex-shrink-0'>
+										<Image
+											src='/images/image 23.png'
+											alt='bottle-water'
+											width={24}
+											height={24}
+										/>{" "}
 									</div>
 									<div>
 										<h3 className='font-semibold text-gray-900 mb-1'>
@@ -180,8 +211,13 @@ const HealthSummaryPage = () => {
 
 								{/* Schedule a Check-up */}
 								<div className='flex items-start space-x-4'>
-									<div className='w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0'>
-										<div className='w-4 h-4 bg-blue-600 rounded-full'></div>
+									<div className='w-6 h-6  flex items-center justify-center flex-shrink-0'>
+										<Image
+											src='/images/image 24.png'
+											alt='bottle-water'
+											width={24}
+											height={24}
+										/>{" "}
 									</div>
 									<div>
 										<h3 className='font-semibold text-gray-900 mb-1'>

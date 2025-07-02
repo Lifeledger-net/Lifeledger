@@ -65,11 +65,14 @@ const SharedPage = () => {
 					</h1>
 
 					{/* Record Info Card */}
-					<div className='rounded-xl p-6 mb-6'>
+					<div className='rounded-xl  mb-6'>
 						<div className='flex items-start space-x-4'>
-							<div className='w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center'>
-								<FolderOpen className='w-6 h-6 text-yellow-600' />
-							</div>
+							<Image
+								src='/images/folder_1.png'
+								alt='Shared Access'
+								width={32}
+								height={32}
+							/>
 
 							<div className='flex-1'>
 								<h2 className='text-xl font-semibold text-gray-900 mb-4'>
@@ -127,7 +130,7 @@ const SharedPage = () => {
 
 					<div className='space-y-4'>
 						{auditLogItems.map((item) => (
-							<div key={item.id} className='flex items-start space-x-4 p-4 '>
+							<div key={item.id} className='flex items-start space-x-4  '>
 								{/* Icon/Avatar */}
 								<div className='flex-shrink-0'>
 									{item.type === "user" ? (
