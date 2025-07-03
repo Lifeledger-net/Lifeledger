@@ -1,0 +1,15 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "rpcUrl": "https://sepolia.infura.io/v3/b26f468efd8b4ec299c070e46c280a9c",
+  "contracts": {
+    "ControlManager": {
+      "address": "0xF177Bfc7e806515eB4a966978e1c7ed498E16753",
+      "abi": "./abis/ControlManager.json"
+    },
+    "RecordRegistry": {
+      "address": "0x40e1bc29e1642564ccEd34DC990D37CeEa2AeFBB",
+      "abi": "./abis/RecordRegistry.json"
+    }
+  }
+}
