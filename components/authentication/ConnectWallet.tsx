@@ -3,12 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-
-interface ConnectWalletProps {
-	onConnect?: () => void;
-	onSwap?: () => void;
-	onBack?: () => void;
-}
+import Link from "next/link";
 
 const walletOptions = [
 	{
@@ -37,11 +32,7 @@ const walletOptions = [
 	},
 ];
 
-export function ConnectWallet({
-	onConnect,
-	onSwap,
-	onBack,
-}: ConnectWalletProps = {}) {
+export function ConnectWallet() {
 	return (
 		<div className='min-h-screen bg-gray-50 flex items-center justify-center p-4 lg:p-8'>
 			<div className='flex flex-col lg:flex-row gap-6 lg:gap-8 w-full max-w-7xl mx-auto'>
@@ -101,16 +92,12 @@ export function ConnectWallet({
 							className='space-y-6'
 						>
 							{/* Header with back button */}
-							{onBack && (
-								<div className='flex items-center space-x-4 mb-2'>
-									<button
-										onClick={onBack}
-										className='p-2 hover:bg-gray-100 rounded-lg transition-colors'
-									>
-										<ArrowLeft className='w-5 h-5 text-gray-600' />
-									</button>
-								</div>
-							)}
+
+							<div className='flex items-center space-x-4 mb-2'>
+								<button className='p-2 hover:bg-gray-100 rounded-lg transition-colors'>
+									<ArrowLeft className='w-5 h-5 text-gray-600' />
+								</button>
+							</div>
 
 							<div className='space-y-2'>
 								<motion.h2
@@ -139,13 +126,6 @@ export function ConnectWallet({
 										initial={{ y: 20, opacity: 0 }}
 										animate={{ y: 0, opacity: 1 }}
 										transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-										onClick={
-											wallet.name === "MetaMask"
-												? onConnect
-												: wallet.name === "More Wallets"
-												? onSwap
-												: undefined
-										}
 										className='w-full flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 group shadow-sm transform hover:scale-[1.02]'
 									>
 										<div
@@ -155,7 +135,7 @@ export function ConnectWallet({
 										</div>
 										<div className='flex-1 text-left'>
 											<h3 className='font-semibold text-gray-900 text-sm sm:text-base'>
-												{wallet.name}
+												<Link href='/swap'> {wallet.name}</Link>
 											</h3>
 											{wallet.description && (
 												<p className='text-xs sm:text-sm text-gray-500'>

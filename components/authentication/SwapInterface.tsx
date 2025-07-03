@@ -4,13 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpDown, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
-interface SwapInterfaceProps {
-	onConnect: () => void;
-	onBack: () => void;
-}
 
-export function SwapInterface({ onConnect, onBack }: SwapInterfaceProps) {
+
+export function SwapInterface() {
 	return (
 		<div className='min-h-screen bg-gray-50 flex items-center justify-center p-4 lg:p-8'>
 			<div className='flex flex-col lg:flex-row gap-6 lg:gap-8 w-full max-w-7xl mx-auto'>
@@ -72,7 +70,6 @@ export function SwapInterface({ onConnect, onBack }: SwapInterfaceProps) {
 							{/* Header with back button */}
 							<div className='flex items-center space-x-4 mb-1'>
 								<button
-									onClick={onBack}
 									className='p-2 hover:bg-gray-100 rounded-lg transition-colors'
 								>
 									<ArrowLeft className='w-5 h-5 text-gray-600' />
@@ -152,10 +149,11 @@ export function SwapInterface({ onConnect, onBack }: SwapInterfaceProps) {
 
 								{/* Connect Wallet Button */}
 								<button
-									onClick={onConnect}
 									className='w-full bg-[#2596BE] hover:bg-cyan-600 text-white font-semibold py-4 rounded-[8px] transition-all duration-200 transform hover:scale-[1.02] shadow-lg'
 								>
-									Connect Wallet
+									<Link href='/connected' className='flex items-center justify-center'>
+										Connect Wallet
+									</Link>
 								</button>
 							</div>
 
@@ -164,7 +162,7 @@ export function SwapInterface({ onConnect, onBack }: SwapInterfaceProps) {
 								initial={{ y: 20, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.6, delay: 1.0 }}
-								className=' p-4 flex items-start space-x-3'
+								className=' p-4 flex items-start space-x-5'
 							>
 								<div className='flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5'>
 									<Image

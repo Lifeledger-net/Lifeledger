@@ -4,14 +4,9 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Copy, LogOut, Edit3, User } from "lucide-react";
 import Image from "next/image";
 import { AnimatedBackground } from "../AnimatedBackground";
-import { Button } from "../ui/button";
+import Link from "next/link";
 
-interface ConnectedStateProps {
-	onContinue: () => void;
-	onBack: () => void;
-}
-
-export function ConnectedState({ onContinue, onBack }: ConnectedStateProps) {
+export function ConnectedState() {
 	return (
 		<div className='min-h-screen bg-gray-50 flex items-center justify-center p-4 lg:p-8'>
 			<div className='flex flex-col lg:flex-row gap-6 lg:gap-8 w-full max-w-7xl mx-auto'>
@@ -72,12 +67,6 @@ export function ConnectedState({ onContinue, onBack }: ConnectedStateProps) {
 						>
 							{/* Header with back button */}
 							<div className='flex items-center space-x-4 mb-2'>
-								<button
-									onClick={onBack}
-									className='p-2 hover:bg-gray-100 rounded-lg transition-colors'
-								>
-									<ArrowLeft className='w-5 h-5 text-gray-600' />
-								</button>
 								<div>
 									<h2 className='text-2xl sm:text-3xl font-bold text-gray-900'>
 										Connected
@@ -113,34 +102,40 @@ export function ConnectedState({ onContinue, onBack }: ConnectedStateProps) {
 									initial={{ y: 20, opacity: 0 }}
 									animate={{ y: 0, opacity: 1 }}
 									transition={{ duration: 0.4, delay: 0.6 }}
-									className='w-full bg-white border border-gray-200 rounded-xl p-4 flex items-center space-x-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 transform hover:scale-[1.02] group shadow-sm'
+									className='w-full bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center space-x-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 transform hover:scale-[1.02] group shadow-sm'
 								>
-									<Edit3 className='w-5 h-5 text-gray-600 group-hover:text-blue-600' />
-									<span className='flex-1 text-left font-medium text-gray-900'>
-										Update Avatar
+									<span className='flex items-center font-medium text-gray-900'>
+										<Link
+											href='/dashboard'
+											className='flex items-center justify-center'
+										>
+											Update Avatar
+										</Link>
+									</span>
+								</motion.button>
+								<motion.button
+									initial={{ y: 20, opacity: 0 }}
+									animate={{ y: 0, opacity: 1 }}
+									transition={{ duration: 0.4, delay: 0.6 }}
+									className='w-full bg-white border border-[#D4D4D4] rounded-[8px] p-4 flex items-center justify-center space-x-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 transform hover:scale-[1.02] group shadow-sm'
+								>
+									<span className='flex items-center font-medium text-gray-900'>
+										<Link
+											href='/dashboard'
+											className='flex items-center justify-center'
+										>
+											Rename Wallet
+										</Link>
 									</span>
 								</motion.button>
 
 								<motion.button
 									initial={{ y: 20, opacity: 0 }}
 									animate={{ y: 0, opacity: 1 }}
-									transition={{ duration: 0.4, delay: 0.7 }}
-									className='w-full bg-white border border-gray-200 rounded-xl p-4 flex items-center space-x-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 transform hover:scale-[1.02] group shadow-sm'
+									transition={{ duration: 0.4, delay: 0.6 }}
+									className='w-full bg-white border border-[#D4D4D4] rounded-[8px] p-4 flex items-center justify-center space-x-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 transform hover:scale-[1.02] group shadow-sm'
 								>
-									<User className='w-5 h-5 text-gray-600 group-hover:text-blue-600' />
-									<span className='flex-1 text-left font-medium text-gray-900'>
-										Rename Wallet
-									</span>
-								</motion.button>
-
-								<motion.button
-									initial={{ y: 20, opacity: 0 }}
-									animate={{ y: 0, opacity: 1 }}
-									transition={{ duration: 0.4, delay: 0.8 }}
-									className='w-full bg-white border border-gray-200 rounded-xl p-4 flex items-center space-x-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 transform hover:scale-[1.02] group shadow-sm'
-								>
-									<Copy className='w-5 h-5 text-gray-600 group-hover:text-blue-600' />
-									<span className='flex-1 text-left font-medium text-gray-900'>
+									<span className='flex items-center font-medium text-gray-900'>
 										Copy Address
 									</span>
 								</motion.button>
@@ -148,13 +143,11 @@ export function ConnectedState({ onContinue, onBack }: ConnectedStateProps) {
 								<motion.button
 									initial={{ y: 20, opacity: 0 }}
 									animate={{ y: 0, opacity: 1 }}
-									transition={{ duration: 0.4, delay: 0.9 }}
-									onClick={onContinue}
-									className='w-full bg-blue-600 text-white rounded-xl p-4 flex items-center space-x-4 hover:bg-blue-700 transition-all duration-200 transform hover:scale-[1.02] group shadow-lg'
+									transition={{ duration: 0.4, delay: 0.6 }}
+									className='w-full bg-white border border-[#D4D4D4] rounded-[8px] p-4 flex items-center justify-center space-x-4 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 transform hover:scale-[1.02] group shadow-sm'
 								>
-									<LogOut className='w-5 h-5 text-white' />
-									<span className='flex-1 text-left font-medium'>
-										Continue to Dashboard
+									<span className='flex items-center font-medium text-gray-900'>
+										Disconnect
 									</span>
 								</motion.button>
 							</div>
