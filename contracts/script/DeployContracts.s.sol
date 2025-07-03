@@ -5,7 +5,7 @@ import "forge-std/Script.sol";
 import {ControlManger} from "../src/ControlManger.sol";
 import {RecordRegistory} from "../src/RecordRegistory.sol";
 
-contract DeployContracts is Script {
+contract DeployContract is Script {
     function run() external {
         vm.startBroadcast();
 
