@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { SwapInterface } from "@/components/SwapInterface"; // Adjust the import path if needed
+import { SwapInterface } from "@/components/authentication/SwapInterface"; // Adjust the import path if needed
 
 export default function Page() {
 	const handleConnect = () => {

@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Copy, LogOut, Edit3, User } from "lucide-react";
 import Image from "next/image";
-import { AnimatedBackground } from "./AnimatedBackground";
-import { Button } from "./ui/button";
+import { AnimatedBackground } from "../AnimatedBackground";
+import { Button } from "../ui/button";
 
 interface ConnectedStateProps {
 	onContinue: () => void;

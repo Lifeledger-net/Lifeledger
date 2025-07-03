@@ -1,4 +1,3 @@
-// pages/shared/page.tsx or components/pages/SharedPage.tsx
 "use client";
 
 import {

@@ -1,4 +1,3 @@
-// pages/upload/page.tsx
 "use client";
 import Image from "next/image";
 
