@@ -2,5 +2,6 @@
   "/page": "app/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/shared/page": "app/shared/page.js",
-  "/health-summary/page": "app/health-summary/page.js"
+  "/health-summary/page": "app/health-summary/page.js",
+  "/upload/page": "app/upload/page.js"
 }

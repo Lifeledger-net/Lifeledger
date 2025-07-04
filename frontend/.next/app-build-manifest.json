@@ -16,15 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/page.js"
     ],
-    "/shared/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/shared/page.js"
-    ],
     "/upload/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/upload/page.js"
+    ],
+    "/shared/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/shared/page.js"
     ],
     "/health-summary/page": [
       "static/chunks/webpack.js",
