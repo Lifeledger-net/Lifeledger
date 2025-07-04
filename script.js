@@ -85,34 +85,60 @@ const modal = new Web3Modal({
 let provider, signer, recordContract;
 
 // wallet connect part
-async function connectWallet() {
-  try {
-    const modal = new Web3Modal({
-      projectId,
-      themeMode: "light",
-      ethereumClient,
-    });
+window.addEventListener("DOMContentLoaded", () => {
+  const projectId = "557ab117156ddfd1922c8f88bd01e1d6";
 
-    await modal.openModal();
+  const { Web3Modal } = window.Web3Modal;
+  const { EthereumClient, w3mConnectors, w3mProvider } = window.Web3ModalEthereum;
+  const { configureChains, createConfig } = window.wagmi;
+  const { sepolia } = window.wagmiChains;
 
-    provider = new ethers.providers.Web3Provider(window.ethereum);
-    signer = provider.getSigner();
+  const chains = [sepolia];
+  const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 
-    const network = await provider.getNetwork();
-    if (network.chainId !== 11155111) {
-      alert("Please switch to Sepolia network.");
-      return;
+  const wagmiConfig = createConfig({
+    autoConnect: true,
+    connectors: w3mConnectors({ projectId, chains }),
+    publicClient,
+  });
+
+  const ethereumClient = new EthereumClient(wagmiConfig, chains);
+
+  async function connectWallet() {
+    try {
+      const modal = new Web3Modal({
+        projectId,
+        themeMode: "light",
+        ethereumClient,
+      });
+
+      await modal.openModal();
+
+      if (!window.ethereum) {
+        alert("No wallet detected.");
+        return;
+      }
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+
+      const network = await provider.getNetwork();
+      if (network.chainId !== 11155111) {
+        alert("Please switch to Sepolia network.");
+        return;
+      }
+
+      const address = await signer.getAddress();
+      alert(`Connected: ${address}`);
+    } catch (err) {
+      console.error("Wallet connection error:", err);
+      alert("Could not connect wallet.");
     }
-
-    recordContract = new ethers.Contract(contractAddress, recordRegistryABI, signer);
-
-    const address = await signer.getAddress();
-    alert(`Wallet connected: ${address}`);
-  } catch (err) {
-    console.error("Connection failed:", err);
-    alert("Could not connect wallet.");
   }
-}
+
+  window.connectWallet = connectWallet; // expose to button
+});
+
 
 
 // to Upload a new record to Sepolia chain
