@@ -1,0 +1,180 @@
+{
+  "abi": [
+    {
+      "type": "function",
+      "name": "grantAccess",
+      "inputs": [
+        { "name": "provider", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "hasAccess",
+      "inputs": [
+        { "name": "patient", "type": "address", "internalType": "address" },
+        { "name": "provider", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "revokeAccess",
+      "inputs": [
+        { "name": "provider", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "event",
+      "name": "AccessGranted",
+      "inputs": [
+        {
+          "name": "patient",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "provider",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "AccessRevoked",
+      "inputs": [
+        {
+          "name": "patient",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "provider",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600e575f5ffd5b5061043f8061001c5f395ff3fe608060405234801561000f575f5ffd5b506004361061003f575f3560e01c80630ae5e739146100435780631709ef071461005f57806385e685311461008f575b5f5ffd5b61005d6004803603810190610058919061036d565b6100ab565b005b61007960048036038101906100749190610398565b610197565b60405161008691906103f0565b60405180910390f35b6100a960048036038101906100a4919061036d565b610224565b005b60015f5f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f9f520b3bfc56d06f7065d10b4683b3f57ac8895d5026cd176dee95ce1454cb8d60405160405180910390a350565b5f5f5f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff16905092915050565b5f5f5f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f825c8be24eb0df19500f63e86c29e7d0d951e73056b889b891d85e40938d9b6e60405160405180910390a350565b5f5ffd5b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f61033c82610313565b9050919050565b61034c81610332565b8114610356575f5ffd5b50565b5f8135905061036781610343565b92915050565b5f602082840312156103825761038161030f565b5b5f61038f84828501610359565b91505092915050565b5f5f604083850312156103ae576103ad61030f565b5b5f6103bb85828601610359565b92505060206103cc85828601610359565b9150509250929050565b5f8115159050919050565b6103ea816103d6565b82525050565b5f6020820190506104035f8301846103e1565b9291505056fea2646970667358221220d1cb24f5949e25fa55d87852cf5171c8dc8699c29ef63dd9554a52ec8c7cea3564736f6c634300081e0033",
+    "sourceMap": "58:985:16:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561000f575f5ffd5b506004361061003f575f3560e01c80630ae5e739146100435780631709ef071461005f57806385e685311461008f575b5f5ffd5b61005d6004803603810190610058919061036d565b6100ab565b005b61007960048036038101906100749190610398565b610197565b60405161008691906103f0565b60405180910390f35b6100a960048036038101906100a4919061036d565b610224565b005b60015f5f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f9f520b3bfc56d06f7065d10b4683b3f57ac8895d5026cd176dee95ce1454cb8d60405160405180910390a350565b5f5f5f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff16905092915050565b5f5f5f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff0219169083151502179055508073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f825c8be24eb0df19500f63e86c29e7d0d951e73056b889b891d85e40938d9b6e60405160405180910390a350565b5f5ffd5b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f61033c82610313565b9050919050565b61034c81610332565b8114610356575f5ffd5b50565b5f8135905061036781610343565b92915050565b5f602082840312156103825761038161030f565b5b5f61038f84828501610359565b91505092915050565b5f5f604083850312156103ae576103ad61030f565b5b5f6103bb85828601610359565b92505060206103cc85828601610359565b9150509250929050565b5f8115159050919050565b6103ea816103d6565b82525050565b5f6020820190506104035f8301846103e1565b9291505056fea2646970667358221220d1cb24f5949e25fa55d87852cf5171c8dc8699c29ef63dd9554a52ec8c7cea3564736f6c634300081e0033",
+    "sourceMap": "58:985:16:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;488:154;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;905:136;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;685:156;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;488:154;581:4;546:10;:22;557:10;546:22;;;;;;;;;;;;;;;:32;569:8;546:32;;;;;;;;;;;;;;;;:39;;;;;;;;;;;;;;;;;;626:8;600:35;;614:10;600:35;;;;;;;;;;;;488:154;:::o;905:136::-;982:4;1005:10;:19;1016:7;1005:19;;;;;;;;;;;;;;;:29;1025:8;1005:29;;;;;;;;;;;;;;;;;;;;;;;;;998:36;;905:136;;;;:::o;685:156::-;779:5;744:10;:22;755:10;744:22;;;;;;;;;;;;;;;:32;767:8;744:32;;;;;;;;;;;;;;;;:40;;;;;;;;;;;;;;;;;;825:8;799:35;;813:10;799:35;;;;;;;;;;;;685:156;:::o;88:117:18:-;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:139::-;742:5;780:6;767:20;758:29;;796:33;823:5;796:33;:::i;:::-;696:139;;;;:::o;841:329::-;900:6;949:2;937:9;928:7;924:23;920:32;917:119;;;955:79;;:::i;:::-;917:119;1075:1;1100:53;1145:7;1136:6;1125:9;1121:22;1100:53;:::i;:::-;1090:63;;1046:117;841:329;;;;:::o;1176:474::-;1244:6;1252;1301:2;1289:9;1280:7;1276:23;1272:32;1269:119;;;1307:79;;:::i;:::-;1269:119;1427:1;1452:53;1497:7;1488:6;1477:9;1473:22;1452:53;:::i;:::-;1442:63;;1398:117;1554:2;1580:53;1625:7;1616:6;1605:9;1601:22;1580:53;:::i;:::-;1570:63;;1525:118;1176:474;;;;;:::o;1656:90::-;1690:7;1733:5;1726:13;1719:21;1708:32;;1656:90;;;:::o;1752:109::-;1833:21;1848:5;1833:21;:::i;:::-;1828:3;1821:34;1752:109;;:::o;1867:210::-;1954:4;1992:2;1981:9;1977:18;1969:26;;2005:65;2067:1;2056:9;2052:17;2043:6;2005:65;:::i;:::-;1867:210;;;;:::o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "grantAccess(address)": "0ae5e739",
+    "hasAccess(address,address)": "1709ef07",
+    "revokeAccess(address)": "85e68531"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"patient\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"}],\"name\":\"AccessGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"patient\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"}],\"name\":\"AccessRevoked\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"}],\"name\":\"grantAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"patient\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"}],\"name\":\"hasAccess\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"}],\"name\":\"revokeAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/ControlManger.sol\":\"ControlManger\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/ControlManger.sol\":{\"keccak256\":\"0xbc1b0d60f4fd1d210098bdd6948b1956378cc0d35c9b85872ddb90f087a852ca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e2e497512012d04ceee0b300fd63a1a2f5d48c95f9020fd7e563dd47b2bdb45e\",\"dweb:/ipfs/QmQvoD2EStnbcaJ3n3driLvuXEKJG6RRLzHfKpc57QPyWx\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": { "version": "0.8.30+commit.73712a01" },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "patient",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "provider",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "AccessGranted",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "patient",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "provider",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "AccessRevoked",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "provider", "type": "address" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "grantAccess"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "patient", "type": "address" },
+            { "internalType": "address", "name": "provider", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "hasAccess",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "provider", "type": "address" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "revokeAccess"
+        }
+      ],
+      "devdoc": { "kind": "dev", "methods": {}, "version": 1 },
+      "userdoc": { "kind": "user", "methods": {}, "version": 1 }
+    },
+    "settings": {
+      "remappings": ["forge-std/=lib/forge-std/src/"],
+      "optimizer": { "enabled": false, "runs": 200 },
+      "metadata": { "bytecodeHash": "ipfs" },
+      "compilationTarget": { "src/ControlManger.sol": "ControlManger" },
+      "evmVersion": "cancun",
+      "libraries": {}
+    },
+    "sources": {
+      "src/ControlManger.sol": {
+        "keccak256": "0xbc1b0d60f4fd1d210098bdd6948b1956378cc0d35c9b85872ddb90f087a852ca",
+        "urls": [
+          "bzz-raw://e2e497512012d04ceee0b300fd63a1a2f5d48c95f9020fd7e563dd47b2bdb45e",
+          "dweb:/ipfs/QmQvoD2EStnbcaJ3n3driLvuXEKJG6RRLzHfKpc57QPyWx"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "id": 16
+}
