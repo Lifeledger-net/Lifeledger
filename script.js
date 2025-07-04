@@ -84,7 +84,7 @@ const modal = new Web3Modal({
 
 let provider, signer, recordContract;
 
-// wallet connect
+// wallet connect part
 async function connectWallet() {
   try {
     const modal = new Web3Modal({
