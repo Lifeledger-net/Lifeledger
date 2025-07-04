@@ -87,7 +87,13 @@ let provider, signer, recordContract;
 // wallet connect
 async function connectWallet() {
   try {
-    await modal.openModal(); 
+    const modal = new Web3Modal({
+      projectId,
+      themeMode: "light",
+      ethereumClient,
+    });
+
+    await modal.openModal();
 
     provider = new ethers.providers.Web3Provider(window.ethereum);
     signer = provider.getSigner();
@@ -107,6 +113,7 @@ async function connectWallet() {
     alert("Could not connect wallet.");
   }
 }
+
 
 // to Upload a new record to Sepolia chain
 async function uploadRecord() {
