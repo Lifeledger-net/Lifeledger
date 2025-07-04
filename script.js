@@ -5,7 +5,7 @@ if (chatbotIcon) {
   });
 }
 
-// mobile nav menu
+// mobile nav men
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
