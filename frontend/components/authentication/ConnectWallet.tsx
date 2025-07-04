@@ -8,7 +8,6 @@ export function ConnectWallet() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 lg:p-8">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 w-full max-w-7xl mx-auto">
-        {/* Left side - Background Image with Overlay */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -84,7 +83,6 @@ export function ConnectWallet() {
                 </motion.p>
               </div>
 
-              {/* ✅ W3 Wallet Connect button */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

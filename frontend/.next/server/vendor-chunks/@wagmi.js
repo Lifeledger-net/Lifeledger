@@ -391,6 +391,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "(ssr)/./node_modules/@wagmi/core/dist/esm/query/disconnect.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@wagmi/core/dist/esm/query/disconnect.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   disconnectMutationOptions: () => (/* binding */ disconnectMutationOptions)\n/* harmony export */ });\n/* harmony import */ var _actions_disconnect_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/disconnect.js */ \"(ssr)/./node_modules/@wagmi/core/dist/esm/actions/disconnect.js\");\n\nfunction disconnectMutationOptions(config) {\n    return {\n        mutationFn(variables) {\n            return (0,_actions_disconnect_js__WEBPACK_IMPORTED_MODULE_0__.disconnect)(config, variables);\n        },\n        mutationKey: ['disconnect'],\n    };\n}\n//# sourceMappingURL=disconnect.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvQHdhZ21pL2NvcmUvZGlzdC9lc20vcXVlcnkvZGlzY29ubmVjdC5qcyIsIm1hcHBpbmdzIjoiOzs7OztBQUF1RDtBQUNoRDtBQUNQO0FBQ0E7QUFDQSxtQkFBbUIsa0VBQVU7QUFDN0IsU0FBUztBQUNUO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dGpzLy4vbm9kZV9tb2R1bGVzL0B3YWdtaS9jb3JlL2Rpc3QvZXNtL3F1ZXJ5L2Rpc2Nvbm5lY3QuanM/OWQ3OCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBkaXNjb25uZWN0LCB9IGZyb20gJy4uL2FjdGlvbnMvZGlzY29ubmVjdC5qcyc7XG5leHBvcnQgZnVuY3Rpb24gZGlzY29ubmVjdE11dGF0aW9uT3B0aW9ucyhjb25maWcpIHtcbiAgICByZXR1cm4ge1xuICAgICAgICBtdXRhdGlvbkZuKHZhcmlhYmxlcykge1xuICAgICAgICAgICAgcmV0dXJuIGRpc2Nvbm5lY3QoY29uZmlnLCB2YXJpYWJsZXMpO1xuICAgICAgICB9LFxuICAgICAgICBtdXRhdGlvbktleTogWydkaXNjb25uZWN0J10sXG4gICAgfTtcbn1cbi8vIyBzb3VyY2VNYXBwaW5nVVJMPWRpc2Nvbm5lY3QuanMubWFwIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/@wagmi/core/dist/esm/query/disconnect.js\n");
+
+/***/ }),
+
 /***/ "(ssr)/./node_modules/@wagmi/core/dist/esm/utils/cookie.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@wagmi/core/dist/esm/utils/cookie.js ***!
