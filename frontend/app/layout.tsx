@@ -4,6 +4,8 @@ import { headers } from "next/headers";
 import { DM_Sans } from "next/font/google";
 import ContextProvider from "@/app/context";
 
+export const dynamic = "force-dynamic";
+
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -24,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={dmSans.className}>
-        <ContextProvider>{children}</ContextProvider>
+        <ContextProvider cookies={cookies}>{children}</ContextProvider>
       </body>
     </html>
   );
