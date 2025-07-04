@@ -19,6 +19,10 @@ if (menuToggle) {
 
 // ethers.js
 
+// Web3Modal Project ID from WalletConnect Cloud
+const projectId = "557ab117156ddfd1922c8f88bd01e1d6";
+
+// ABI from RecordRegistry.sol
 const recordRegistryABI = [
   {
     "inputs": [
@@ -55,61 +59,81 @@ const recordRegistryABI = [
 
 const contractAddress = "0x40e1bc29e1642564ccEd34DC990D37CeEa2AeFBB";
 
-// ✅ Global provider & signer for Sepolia
-let provider = new ethers.providers.Web3Provider(window.ethereum);
-let signer = provider.getSigner();
-let recordContract;
+//  Wallet & Contract setup
+const { EthereumClient, w3mConnectors, w3mProvider } = window.Web3ModalEthereum;
+const { Web3Modal } = window.Web3Modal;
+const { configureChains, createConfig } = window.wagmi;
+const { sepolia } = window.wagmiChains;
 
+const chains = [sepolia];
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
+
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors: w3mConnectors({ projectId, chains }),
+  publicClient,
+});
+
+const ethereumClient = new EthereumClient(wagmiConfig, chains);
+
+const modal = new Web3Modal({
+  projectId,
+  themeMode: "light",
+  ethereumClient,
+});
+
+let provider, signer, recordContract;
+
+// wallet connect
 async function connectWallet() {
-  if (!window.ethereum) {
-    alert("Please install MetaMask.");
-    return;
-  }
-
   try {
-    await window.ethereum.request({ method: "eth_requestAccounts" });
+    await modal.openModal(); 
 
-    provider = new ethers.providers.Web3Provider(window.ethereum); // ensure update
+    provider = new ethers.providers.Web3Provider(window.ethereum);
     signer = provider.getSigner();
 
-    const { chainId } = await provider.getNetwork();
-    if (chainId !== 11155111) {
-      alert("Please switch MetaMask to the Sepolia network.");
+    const network = await provider.getNetwork();
+    if (network.chainId !== 11155111) {
+      alert("Please switch to Sepolia network.");
       return;
     }
 
     recordContract = new ethers.Contract(contractAddress, recordRegistryABI, signer);
-    alert("Wallet connected to Sepolia. Smart contract ready.");
+
+    const address = await signer.getAddress();
+    alert(`Wallet connected: ${address}`);
   } catch (err) {
-    console.error("Wallet connection error:", err);
+    console.error("Connection failed:", err);
     alert("Could not connect wallet.");
   }
 }
 
+// to Upload a new record to Sepolia chain
 async function uploadRecord() {
   const patient = document.getElementById("patientAddress").value;
   const cid = document.getElementById("recordCID").value;
 
   if (!patient || !cid) {
-    alert("Please fill both patient address and CID.");
+    alert("Patient address and CID required.");
     return;
   }
 
   try {
     const tx = await recordContract.storeRecord(patient, cid);
     await tx.wait();
-    alert("Record uploaded successfully!");
+    alert("Record successfully uploaded to blockchain.");
   } catch (err) {
-    console.error("Upload error:", err);
-    alert("Transaction failed.");
+    console.error("Upload failed:", err);
+    alert("Upload failed.");
   }
 }
 
-async function readRecords() {
+// the records for a patient address
+async function getRecords() {
   const patient = document.getElementById("readPatient").value;
 
   if (!patient) {
-    alert("Please enter a patient address.");
+    alert("Enter a patient address.");
     return;
   }
 
@@ -117,17 +141,15 @@ async function readRecords() {
     const records = await recordContract.getRecords(patient);
     const output = document.getElementById("recordOutput");
 
-    if (!records.length) {
-      output.innerHTML = "<i>No records found for this address.</i>";
-      return;
+    if (records.length === 0) {
+      output.innerHTML = "<i>No records found.</i>";
+    } else {
+      output.innerHTML = "<b>Records:</b><br>" + records.map(c => `<code>${c}</code>`).join("<br>");
     }
-
-    output.innerHTML =
-      "<strong>Records:</strong><br>" +
-      records.map(cid => `<code>${cid}</code>`).join("<br>");
   } catch (err) {
-    console.error("Read error:", err);
-    alert("Failed to fetch records.");
+    console.error("Fetch failed:", err);
+    alert("Unable to fetch records.");
   }
 }
+
 
